@@ -25,7 +25,7 @@ gem "will_paginate"
 gem "acts-as-taggable-on"
 gem "gchartrb"
 
-gem 'devise'
+gem "devise", "~> 1.5.3"
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test
