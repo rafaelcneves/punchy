@@ -1,4 +1,6 @@
-==Welcome to Punchy!
+Este repositório é um Fork do punchy original destinado a melhorias para um trabalho de SOFT, matéria do curso de TADS na UDESC
+
+==About the Punchy!
 
 Punchy is a super simple, straight forward rails 3.0 app that allows you to keep track of what you've been working on.
 
@@ -25,9 +27,9 @@ and you're done, except the time zone defaults to UTC. Read the next section to 
 
 ==But the days are all messed up?
 
-Punchy is currently set to UTC.  If you live elsewhere, you'll need to run: 
+Punchy is currently set to UTC.  If you live elsewhere, you'll need to run:
 
-  rake time:zones:all 
+  rake time:zones:all
 
 in your local environment to get a legal list of values. Pick a relevant one and then run:
 
@@ -39,10 +41,10 @@ Released under the MIT License:
 
 Copyright (c) 2011 Jay Godse
 
-License: MIT - same as the one from Ryan Quinn below. 
+License: MIT - same as the one from Ryan Quinn below.
 
 
-This app was derived from Ryan Quinn's Punchy, with the following license. 
+This app was derived from Ryan Quinn's Punchy, with the following license.
 
  Copyright (c) 2011 Ryan Quinn
 
