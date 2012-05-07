@@ -2,9 +2,9 @@ class ApplicationController < ActionController::Base
 ###############################################
 # Punchy
 # Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Punchy
-# 
+#
 # Copyright (c) 2010 Ryan Quinn
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -22,8 +22,10 @@ class ApplicationController < ActionController::Base
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-################################################ 
- protect_from_forgery
+################################################
+  protect_from_forgery
   layout 'application'
+
+  before_filter :authenticate_user!
 
 end
