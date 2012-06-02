@@ -1,11 +1,11 @@
 class PunchesController < ApplicationController
-	
+
 ###############################################
 # Punchy
 # Please submit bug reports/suggestions via the github repo http://github.com/mazondo/Punchy
-# 
+#
 # Copyright (c) 2010 Ryan Quinn
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -23,7 +23,7 @@ class PunchesController < ApplicationController
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-################################################ 
+################################################
 
   # GET /punches
   # GET /punches.xml
@@ -109,7 +109,7 @@ class PunchesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   #this is the json function for the autocomplete
   def autocomplete
   	@tags = nil
