@@ -7,6 +7,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <div class="container_12">
 	<div class="grid_12">
 		<div id="header">
@@ -42,14 +43,14 @@
 			<li><a href="<%= reporting_punches_path(:project => project.name) %>" class="project important"><%= project %></a> (<%= hours_for(project) %>)</li>
 		<% end %>
 		</ul>
-		
+
 		<h3>Recent Clients</h3>
 		<ul class="projects">
 		<% Punch.client_counts.each do |client| %>
 			<li><a href="<%= reporting_punches_path(:client => client.name) %>" class="client important"><%= client %></a> (<%= hours_for(client) %>)</li>
 		<% end %>
 		</ul>
-		
+
 		<h3>Recent Actions</h3>
 		<ul class="projects">
 		<% Punch.action_counts.each do |action| %>
@@ -62,7 +63,7 @@
 		Created by <a href="http://www.mazondo.com">Ryan Quinn</a>
 		<br />
 		<a href="http://www.opensourcerails.com/projects/607989-Punchy" title="Open Source Rails - Punchy">Punchy on Open Source Rails</a> | <a href="http://www.github.com/mazondo/Punchy">Punchy on Github</a>
-		
+
 	</div>
 </div>
 
