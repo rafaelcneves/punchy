@@ -1,14 +1,16 @@
 class Punch < ActiveRecord::Base
+	belongs_to :created_by, :class_name => "User"
+
 	acts_as_taggable_on :projects, :clients, :actions
-	
+
 	validates_presence_of :body
-	
+
 	default_scope :order => "punches.created_at DESC" #this sets the default order to reverse chronological
 	scope :in_last_week, where("punches.created_at > ?", 1.week.ago)
 	scope :in_last_month, where("punches.created_at > ?", 1.month.ago)
 	scope :months_ago, lambda { |lambda| where("punches.created_at > ? AND punches.created_at < ?", lambda.months.ago.beginning_of_month, (lambda - 1).months.ago.beginning_of_month)}
 	scope :since, lambda { |lambda| where("punches.created_at > ?", lambda)}
-	
+
 	#sum hours scopes
 	def self.hours_today
 		self.since(Time.now.beginning_of_day).sum(:duration_in_minutes)
@@ -19,7 +21,7 @@ class Punch < ActiveRecord::Base
 	def self.hours_this_month
 		self.since(Time.now.beginning_of_month).sum(:duration_in_minutes)
 	end
-	
+
 	def parse_and_save
 		if self.valid?
 			self.duration_in_minutes = parse_for_time(body)
@@ -29,25 +31,25 @@ class Punch < ActiveRecord::Base
 			self.save
 		end
 	end
-	
+
 	def project_reg
 		/#\w+/
 	end
-	
+
 	def action_reg
 		/\*\w+/
 	end
-	
+
 	def client_reg
 		/@\w+/
 	end
-	
+
 	def self.per_page
 		10
 	end
-	
+
 	private
-	
+
 	def parse_for_time(text)
 		#right now this will only parse dates that look like 1.5 hours, 1 hour, 1hour using minutes, hours, days or months
 		#1 day is defined to be 8 hours (shouldn't be working longer than this anyways) and 1 month is defined as 30 days (this isn't great, but it's a simple app so it'll work)
@@ -78,7 +80,7 @@ class Punch < ActiveRecord::Base
 		end
 		return time
 	end
-		
+
 	def parse_for_projects(text)
 		reg = project_reg
 		projects = text.scan(reg)
@@ -87,7 +89,7 @@ class Punch < ActiveRecord::Base
 		end
 		return projects
 	end
-	
+
 	def parse_for_clients(text)
 		reg = client_reg
 		clients = text.scan(reg)
@@ -96,7 +98,7 @@ class Punch < ActiveRecord::Base
 		end
 		return clients
 	end
-	
+
 	def parse_for_actions(text)
 		reg = action_reg
 		actions = text.scan(reg)

@@ -43,6 +43,7 @@ class PunchesController < ApplicationController
   # POST /punches.xml
   def create
     @punch = Punch.new(params[:punch])
+    @punch.created_by = current_user
 
     respond_to do |format|
       if @punch.parse_and_save
