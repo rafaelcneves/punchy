@@ -3,8 +3,10 @@
 		<%= highlight(punch).html_safe %>
 	</p>
 	<div class="date"><%= punch.created_by.present? ? punch.created_by.user_name+", " : "" %><%= punch.created_at.strftime("%a, %B %d, %Y") %></div>
+  <% if user_signed_in? && current_user.id == punch.created_by_id %>
 	<div class="punch_control">
   	<%= link_to image_tag("edit.png"), edit_punch_path(punch) %>
   	<%= link_to image_tag("delete.png"), punch, :confirm => 'Are you sure?', :method => :delete %>
   </div>
+  <% end %>
 </div>
