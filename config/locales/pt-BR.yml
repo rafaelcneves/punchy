@@ -1,2 +1,9 @@
 pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "não pode ficar em branco"
   hello: "Hello world"

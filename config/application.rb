@@ -22,11 +22,11 @@ module Timish
     # Activate observers that should always be running
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
-    # Set Time.zone default to the UTC or what ever is in ENV['MY_TIME_ZONE'] and 
+    # Set Time.zone default to the UTC or what ever is in ENV['MY_TIME_ZONE'] and
 	# make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # Run "rake time:zones:all" to get all valid time zones.
-	
+
 	config.time_zone = ENV['MY_TIME_ZONE'] || 'UTC'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
@@ -42,6 +42,8 @@ module Timish
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+
+    config.i18n.default_locale = "pt-BR"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
