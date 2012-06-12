@@ -25,7 +25,9 @@ gem "will_paginate"
 gem "acts-as-taggable-on"
 gem "gchartrb"
 
+# NOTE: Inicio
 gem "devise", "~> 1.5.3"
+# NOTE: Fim
 
 # Bundle gems for certain environments:
 # gem 'rspec', :group => :test

@@ -43,7 +43,9 @@ module Timish
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+    # NOTE: Inicio
     config.i18n.default_locale = "pt-BR"
+    # NOTE: Fim
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

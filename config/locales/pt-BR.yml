@@ -1,3 +1,4 @@
+# NOTE: Inicio
 pt-BR:
   activerecord:
     errors:
@@ -7,3 +8,4 @@ pt-BR:
             current_password:
               blank: "não pode ficar em branco"
   hello: "Hello world"
+# NOTE: Fim

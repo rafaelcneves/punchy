@@ -1,3 +1,4 @@
+# NOTE: Inicio
 class AddUserName < ActiveRecord::Migration
   def self.up
     add_column :users, :user_name, :string
@@ -7,3 +8,4 @@ class AddUserName < ActiveRecord::Migration
     remove_column :users, :user_name
   end
 end
+# NOTE: Fim

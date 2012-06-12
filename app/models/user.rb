@@ -1,3 +1,4 @@
+# NOTE: Inicio
 class User < ActiveRecord::Base
   has_many :punches, :foreign_key => :created_by_id
 
@@ -8,3 +9,4 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :user_name, :locale, :email, :password, :password_confirmation, :remember_me
 end
+# NOTE: Fim

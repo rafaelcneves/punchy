@@ -1,4 +1,6 @@
+<!-- # NOTE: Inicio -->
 <% if user_signed_in? %>
+<!-- # NOTE: Fim -->
   <div id="new_punch">
   <%= form_for(@punch) do |f| %>
     <% if @punch.errors.any? %>
@@ -25,4 +27,6 @@
       </div>
   <% end %>
   </div>
+<!-- # NOTE: Inicio -->
 <% end %>
+<!-- # NOTE: Fim -->

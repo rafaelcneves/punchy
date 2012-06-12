@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
+  # NOTE: Inicio
   before_filter :authenticate_user!, :except => :index
   before_filter :load_locale
 
@@ -12,4 +13,5 @@ class ApplicationController < ActionController::Base
       I18n.locale = "pt-BR"
     end
   end
+  # NOTE: Fim
 end

@@ -1,3 +1,4 @@
+# NOTE: Inicio
 class AddUserToPunch < ActiveRecord::Migration
   def self.up
     add_column :punches, :created_by_id, :integer
@@ -7,3 +8,4 @@ class AddUserToPunch < ActiveRecord::Migration
     remove_column :punches, :created_by_id
   end
 end
+# NOTE: Fim

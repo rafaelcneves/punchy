@@ -1,6 +1,8 @@
 Timish::Application.routes.draw do
 
+  # NOTE: Inicio
   devise_for :users
+  # NOTE: Fim
 
   resources :punches do
   	collection do

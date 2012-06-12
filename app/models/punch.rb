@@ -1,5 +1,7 @@
 class Punch < ActiveRecord::Base
+	# NOTE: Inicio
 	belongs_to :created_by, :class_name => "User"
+	# NOTE: Fim
 
 	acts_as_taggable_on :projects, :clients, :actions
 
